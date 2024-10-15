@@ -1,0 +1,336 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background-color: var(--bg-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+}
+
+a button {
+  font-family: var(--font);
+  color: var(--font-color-secodary);
+  font-size: 1.3rem;
+}
+
+.welcome-h1 {
+  font-size: 6rem;
+}
+
+h1,
+h2 {
+  font-family: var(--font);
+  font-size: clamp(32px, 2.5vw -0.5rem, 2.5rem);
+  text-align: center;
+}
+
+span {
+  color: var(--font-color-secodary);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* VARIBLES */
+
+:root {
+  --bg-color: rgb(187, 186, 185);
+  --secondary-color: rgb(156, 137, 129);
+  --tertiary-color: rgb(5, 132, 209);
+  --font-color: rgb(10, 10, 15);
+  --font: "caviar_dreamsregular";
+  --font-color-secodary: rgb(16, 18, 149);
+}
+
+@font-face {
+  font-family: "caviar_dreamsregular";
+  src: url(./CaviarDreams-webfont.woff);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* NAV */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--secondary-color);
+  height: 80px;
+}
+
+.main-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  position: relative;
+}
+.list-item a {
+  display: block;
+  color: var(--font-color-secodary);
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: var(--font);
+  font-size: 1.5rem;
+}
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+li:hover .dropdown-content {
+  display: block;
+}
+
+/* END OF NAV */
+main {
+  background-color: var(--bg-color);
+  padding-top: 100px;
+}
+/* HERO SECTION */
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  margin: 100px auto;
+  width: 90%;
+  padding: 50px 0;
+  border-radius: 20px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+
+/* ABOUT-ME */
+
+.about-container {
+  background-color: var(--secondary-color);
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about-me p {
+  font-family: var(--font);
+  font-size: clamp(16px, 2.3vw - 0.5rem, 2.5rem);
+  line-height: 1.5;
+  padding: 50px;
+}
+
+.duck-pond {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+figcaption {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: var(--font);
+  text-align: center;
+}
+
+.duck-pond img {
+  width: calc(100% - 100px);
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 80%;
+}
+
+/* Gallery */
+
+.galleries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.me-at-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.me-at-home img {
+  width: 600px;
+  height: 500px;
+  aspect-ratio: 1/1;
+}
+
+.me-at-home button {
+  background-image: linear-gradient(
+    to left,
+    var(--bg-color),
+    var(--secondary-color),
+    var(--bg-color)
+  );
+  border: 2px solid var(--tertiary-color);
+  height: 60px;
+  width: 300px;
+  margin: 30px 0;
+}
+
+/* At the beach */
+
+.me-at-the-beach {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.me-at-the-beach img {
+  width: 600px;
+  height: 500px;
+  aspect-ratio: 1/1;
+}
+
+.me-at-the-beach button {
+  background-image: linear-gradient(
+    to left,
+    var(--bg-color),
+    var(--secondary-color),
+    var(--bg-color)
+  );
+  border: 2px solid var(--tertiary-color);
+  height: 60px;
+  width: 300px;
+  margin: 30px 0;
+}
+
+/* carousels  */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 5s ease;
+  height: auto;
+  width: 100%;
+  margin: 100px 0 150px auto;
+}
+
+.carousel-image {
+  min-width: 100%;
+  display: none;
+}
+.carousel-image-beach {
+  min-width: 100%;
+  display: none;
+}
+
+.carousel-image.active {
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 10px;
+  color: var(--tertiary-color);
+  background-color: var(--secondary-color);
+}
+
+.next {
+  right: 10px;
+  color: var(--tertiary-color);
+  background-color: var(--secondary-color);
+}
+
+.beach {
+  width: 100%;
+  height: auto;
+}
+
+.beach-video {
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  max-width: 800px;
+  margin: 200px auto;
+}
+
+video {
+  margin: 0 auto;
+  height: 600px;
+}
+/* FOOTER */
+
+.footer-container {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-container a {
+  color: var(--font-color-secodary);
+  font-family: var(--font);
+  font-size: 1.8rem;
+}
+
+.footer-container p {
+  font-size: 2rem;
+  color: var(--font-color-secodary);
+  text-align: center;
+}
